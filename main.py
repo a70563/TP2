@@ -2,7 +2,8 @@ from clientes import cria_novo_cliente, imprime_lista_de_clientes
 from faturas import cria_nova_fatura, imprime_lista_de_faturas
 from io_ficheiros import (carrega_as_listas_dos_ficheiros,
                           guarda_as_listas_em_ficheiros)
-from io_terminal import pause
+from io_terminal import (imprime_lista, pergunta_id,
+                         guarda_as_listas_em_ficheiros)
 from veiculos import cria_novo_veiculo, imprime_lista_de_veiculos
 
 
