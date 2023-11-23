@@ -11,7 +11,7 @@ if __name__ == "__main__":
     menu()
 
 def menu():
-    """Menu principal da aplicação"""
+    """Menu principal da aplicação de oficina"""
 
     lista_de_veiculos = []
     lista_de_clientes = []
