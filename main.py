@@ -2,30 +2,29 @@ from clientes import cria_novo_cliente, imprime_lista_de_clientes
 from faturas import cria_nova_fatura, imprime_lista_de_faturas
 from io_ficheiros import (carrega_as_listas_dos_ficheiros,
                           guarda_as_listas_em_ficheiros)
-from io_terminal import (imprime_lista, pergunta_id,
-                         guarda_as_listas_em_ficheiros)
+from io_terminal import pause
 from veiculos import cria_novo_veiculo, imprime_lista_de_veiculos
+from item import cria_novo_item, imprime_lista_de_items
 
-
-if __name__ == "__main__":
-    menu()
 
 def menu():
     """Menu principal da aplicação de oficina"""
 
     lista_de_veiculos = []
     lista_de_clientes = []
+    lista_de_items = []
     lista_de_faturas = []
 
     while True:
         print("""
         *********************************************************************
-        :    (-: OFICINA BARATINHA - RESISTIMOS A QUALQUER ORÇAMENTO :-)    :
+        :  (-: OFICINA WINRAR - ZIPAMOS QUALQUER ARRANJO NUM INSTANTE :-)   :
         *********************************************************************
         :                                                                   :
-        : nc - novo cliente         lc - listagem de clientes               :
-        : nv - novo veiculo         lv - listagem de veiculos               :
-        : nf - nova fatura          lf - listagem das faturas               :
+        : nc - Novo Cliente         lc - Listagem de Clientes               :
+        : nv - Novo Veiculo         lv - Listagem de Veiculos               :
+        : nf - Mova Fatura          lf - Listagem das Faturas               :
+        : ni - Novo Item            li - Listagem de Items                  :
         : ...                                                               :
         : g - guarda tudo           c - carrega tudo                        :
         : x - sair                                                          :
@@ -39,10 +38,10 @@ def menu():
             exit()
 
         elif op == "g":
-            guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas)
+            guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items)
 
         elif op == "c":
-            lista_de_veiculos, lista_de_clientes, lista_de_faturas = carrega_as_listas_dos_ficheiros()
+            lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items = carrega_as_listas_dos_ficheiros()
 
         elif op == "nc":
             novo_cliente = cria_novo_cliente()
@@ -53,6 +52,11 @@ def menu():
             novo_veiculo = cria_novo_veiculo()
             if novo_veiculo is not None:
                 lista_de_veiculos.append(novo_veiculo)
+
+        elif op == "ni":
+            novo_item = cria_novo_item()
+            if novo_item is not None:
+                lista_de_items.append(novo_item)
 
         elif op == "nf":
             if len(lista_de_clientes) == 0 or len(lista_de_veiculos) == 0:
@@ -73,3 +77,11 @@ def menu():
         elif op == "lf":
             imprime_lista_de_faturas(lista_de_faturas)
             pause()
+    
+        elif op == "li":
+            imprime_lista_de_items(lista_de_items)
+            pause()
+
+
+if __name__ == "__main__":
+    menu()

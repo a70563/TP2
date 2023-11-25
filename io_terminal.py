@@ -40,9 +40,9 @@ def pause():
 def pergunta_id(questao, lista, mostra_lista=False):
     """TODO: documentação
 
-    :param questao:
-    :param lista:
-    :param mostra_lista:
+    :param questao: qual o ID do cliente e do veiculo para ser colocado na fatura
+    :param lista: lista de cliente e lista de veiculo
+    :param mostra_lista: mostra a lista de clientes e a lista de veiculos
     :return:
     """
 
@@ -56,12 +56,12 @@ def pergunta_id(questao, lista, mostra_lista=False):
         else:
             print(f"id inexistente. Tente de novo. Valores admitidos {0} - {len(lista)}")
 
-def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas):
+def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items):
     """TODO: documentação
 
-    :param lista_de_clientes:
-    :param lista_de_veiculos:
-    :param lista_de_faturas:
+    :param lista_de_clientes: lista de clientes registados e guardados
+    :param lista_de_veiculos: lista de veiculos registados e guardados
+    :param lista_de_faturas: lista de faturas feitas e guardadas
     """
 
     op = input("Os dados nos ficheiros serão sobrepostos. Continuar (s/N)?")
@@ -69,5 +69,6 @@ def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de
         guarda_em_ficheiro(nome_ficheiro_lista_de_veiculos, lista_de_veiculos)
         guarda_em_ficheiro(nome_ficheiro_lista_de_clientes, lista_de_clientes)
         guarda_em_ficheiro(nome_ficheiro_lista_de_faturas, lista_de_faturas)
+        guarda_em_ficheiro(nome_ficheiro_lista_de_items, lista_de_items)
     else:
         print("Gravação cancelada...")
