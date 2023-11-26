@@ -1,0 +1,13 @@
+# Ficheiros de cache do Python
+
+__pycache__/
+
+# Ficheiros de backup
+
+*.bak
+*~
+
+# Diretorias de ambientes virtuais do Python
+
+.venv/
+.env/
