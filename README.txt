@@ -14,6 +14,6 @@ Para executar o programa, siga os seguintes passos:
 
 1. Abra o terminal do seu sistema operacional
 2. Navegue até a pasta onde o arquivo 'Main.py' está localizado e use o comando 'cd'
-3. Escreva o comando 'python Main.py' e clique Enter
+3. Escreva o comando 'python src/Main.py' e clique Enter
 
 O programa será iniciado e poderá utilizar o aplicativo da oficina.
