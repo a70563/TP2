@@ -8,8 +8,8 @@ def cria_novo_veiculo():
     marca = input("marca? ")
     modelo = input("modelo?")
     matricula = input("matricula? ").upper()
-    cor = input("Cor?")
-    ano_de_compra = input("Ano de compra?")
+    cor = input("Cor? ")
+    ano_de_compra = input("Ano de compra? ")
 
     veiculo = {"marca": marca,
                "modelo": modelo,

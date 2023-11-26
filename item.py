@@ -6,7 +6,7 @@ nome_ficheiro_lista_de_items = "lista_de_items.pk"
 def cria_novo_item():
 
     nome_item = input("Item? ")
-    valor_item = input("Valor do Item?")
+    valor_item = input("Valor do Item? ")
     quantidade_item = input("Quantos Items? ")
 
     item = {"Nome do Item": nome_item,
