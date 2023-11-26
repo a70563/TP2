@@ -1,11 +1,10 @@
 from clientes import cria_novo_cliente, imprime_lista_de_clientes
 from faturas import cria_nova_fatura, imprime_lista_de_faturas
-from io_ficheiros import (carrega_as_listas_dos_ficheiros,
-                          guarda_as_listas_em_ficheiros)
+from io_ficheiros import (carrega_as_listas_dos_ficheiros, guarda_as_listas_em_ficheiros)
 from io_terminal import pause
 from veiculos import cria_novo_veiculo, imprime_lista_de_veiculos
 from item import cria_novo_item, imprime_lista_de_items
-from cortesia import cria_novo_viatura_cortesia, imprime_lista_de_cortesia
+from cortesia import cria_novo_veiculo_cortesia, imprime_lista_de_cortesia
 
 
 def menu():
@@ -23,50 +22,50 @@ def menu():
         :  (-: OFICINA WINRAR - ZIPAMOS QUALQUER ARRANJO NUM INSTANTE :-)   :
         *********************************************************************
         :                                                                   :
-        : nc  - Novo Cliente            lc  - Listagem de Clientes          :
-        : nv  - Novo Veiculo            lv  - Listagem de Veiculos          :
-        : nf  - Mova Fatura             lf  - Listagem das Faturas          :
-        : ni  - Novo Item               li  - Listagem de Items             :
-        : nvc - Nova Viatura Cortesia   lvc - Listagem Viaturas de Cortesia :
+        : NC  - Novo Cliente            LC  - Listagem de Clientes          :
+        : NV  - Novo Veiculo            LV  - Listagem de Veiculos          :
+        : NF  - Nova Fatura             LF  - Listagem das Faturas          :
+        : NI  - Novo Item               LI  - Listagem de Items             :
+        : NVC - Nova Veículos Cortesia  LVC - Listagem Veículos de Cortesia :
         : ...                                                               :
-        : g - guarda tudo           c - carrega tudo                        :
-        : x - sair                                                          :
+        : G - guarda tudo           C - carrega tudo                        :
+        : X - sair                                                          :
         :                                                                   :
         *********************************************************************
         """)
 
-        op = input("opcao?").lower()
+        op = input("Opcao? ").upper()
 
-        if op == "x":
+        if op == "X":
             exit()
 
-        elif op == "g":
+        elif op == "G":
             guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items, lista_de_cortesia)
 
-        elif op == "c":
+        elif op == "C":
             lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items, lista_de_cortesia = carrega_as_listas_dos_ficheiros()
 
-        elif op == "nc":
+        elif op == "NC":
             novo_cliente = cria_novo_cliente()
             if novo_cliente is not None:
                 lista_de_clientes.append(novo_cliente)
 
-        elif op == "nv":
+        elif op == "NV":
             novo_veiculo = cria_novo_veiculo()
             if novo_veiculo is not None:
                 lista_de_veiculos.append(novo_veiculo)
 
-        elif op == "ni":
+        elif op == "NV":
             novo_item = cria_novo_item()
             if novo_item is not None:
                 lista_de_items.append(novo_item)
 
-        elif op == "nvc":
-            novo_viatura_cortesia = cria_novo_viatura_cortesia()
-            if novo_viatura_cortesia is not None:
-                lista_de_cortesia.append(novo_viatura_cortesia)
+        elif op == "NVC":
+            novo_veiculo_cortesia = cria_novo_veiculo_cortesia()
+            if novo_veiculo_cortesia is not None:
+                lista_de_cortesia.append(novo_veiculo_cortesia)
 
-        elif op == "nf":
+        elif op == "NF":
             if len(lista_de_clientes) == 0 or len(lista_de_veiculos) == 0:
                 print("Não há clientes ou veiculos registados...")
                 continue
@@ -74,23 +73,23 @@ def menu():
             nova_fatura = cria_nova_fatura(lista_de_clientes, lista_de_veiculos, lista_de_items)
             lista_de_faturas.append(nova_fatura)
 
-        elif op == "lc":
+        elif op == "LC":
             imprime_lista_de_clientes(lista_de_clientes)
             pause()
 
-        elif op == "lv":
+        elif op == "LV":
             imprime_lista_de_veiculos(lista_de_veiculos)
             pause()
 
-        elif op == "lf":
+        elif op == "LF":
             imprime_lista_de_faturas(lista_de_faturas)
             pause()
     
-        elif op == "li":
+        elif op == "LI":
             imprime_lista_de_items(lista_de_items)
             pause()
 
-        elif op == "lvc":
+        elif op == "LVC":
             imprime_lista_de_cortesia(lista_de_cortesia)
             pause()
 
