@@ -5,6 +5,7 @@ from io_ficheiros import (carrega_as_listas_dos_ficheiros,
 from io_terminal import pause
 from veiculos import cria_novo_veiculo, imprime_lista_de_veiculos
 from item import cria_novo_item, imprime_lista_de_items
+from cortesia import cria_novo_viatura_cortesia, imprime_lista_de_cortesia
 
 
 def menu():
@@ -14,6 +15,7 @@ def menu():
     lista_de_clientes = []
     lista_de_items = []
     lista_de_faturas = []
+    imprime_lista_de_cortesia = []
 
     while True:
         print("""
@@ -21,10 +23,11 @@ def menu():
         :  (-: OFICINA WINRAR - ZIPAMOS QUALQUER ARRANJO NUM INSTANTE :-)   :
         *********************************************************************
         :                                                                   :
-        : nc - Novo Cliente         lc - Listagem de Clientes               :
-        : nv - Novo Veiculo         lv - Listagem de Veiculos               :
-        : nf - Mova Fatura          lf - Listagem das Faturas               :
-        : ni - Novo Item            li - Listagem de Items                  :
+        : nc  - Novo Cliente            lc  - Listagem de Clientes          :
+        : nv  - Novo Veiculo            lv  - Listagem de Veiculos          :
+        : nf  - Mova Fatura             lf  - Listagem das Faturas          :
+        : ni  - Novo Item               li  - Listagem de Items             :
+        : nvc - Nova Viatura Cortesia   lvc - Listagem Viaturas de Cortesia :
         : ...                                                               :
         : g - guarda tudo           c - carrega tudo                        :
         : x - sair                                                          :
@@ -58,12 +61,17 @@ def menu():
             if novo_item is not None:
                 lista_de_items.append(novo_item)
 
+        elif op == "nvc":
+            novo_viatura_cortesia = cria_novo_viatura_cortesia()
+            if novo_viatura_cortesia is not None:
+                lista_de_cortesia.append(novo_viatura_cortesia)
+
         elif op == "nf":
             if len(lista_de_clientes) == 0 or len(lista_de_veiculos) == 0:
                 print("Não há clientes ou veiculos registados...")
                 continue
 
-            nova_fatura = cria_nova_fatura(lista_de_clientes, lista_de_veiculos)
+            nova_fatura = cria_nova_fatura(lista_de_clientes, lista_de_veiculos, lista_de_items)
             lista_de_faturas.append(nova_fatura)
 
         elif op == "lc":
@@ -80,6 +88,10 @@ def menu():
     
         elif op == "li":
             imprime_lista_de_items(lista_de_items)
+            pause()
+
+        elif op == "lvc":
+            imprime_lista_de_cortesia(lista_de_cortesia)
             pause()
 
 

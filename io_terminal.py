@@ -56,7 +56,7 @@ def pergunta_id(questao, lista, mostra_lista=False):
         else:
             print(f"id inexistente. Tente de novo. Valores admitidos {0} - {len(lista)}")
 
-def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items):
+def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items, lista_de_cortesia):
     """TODO: documentação
 
     :param lista_de_clientes: lista de clientes registados e guardados
@@ -70,5 +70,6 @@ def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de
         guarda_em_ficheiro(nome_ficheiro_lista_de_clientes, lista_de_clientes)
         guarda_em_ficheiro(nome_ficheiro_lista_de_faturas, lista_de_faturas)
         guarda_em_ficheiro(nome_ficheiro_lista_de_items, lista_de_items)
+        guarda_em_ficheiro(nome_ficheiro_lista_de_cortesia, lista_de_cortesia)
     else:
         print("Gravação cancelada...")

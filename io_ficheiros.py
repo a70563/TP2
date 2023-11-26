@@ -4,6 +4,7 @@ from clientes import nome_ficheiro_lista_de_clientes
 from faturas import nome_ficheiro_lista_de_faturas
 from veiculos import nome_ficheiro_lista_de_veiculos
 from item import nome_ficheiro_lista_de_items
+from cortesia import nome_ficheiro_lista_de_cortesia
 
 
 def carrega_as_listas_dos_ficheiros():
@@ -13,10 +14,11 @@ def carrega_as_listas_dos_ficheiros():
     lista_de_clientes = le_de_ficheiro(nome_ficheiro_lista_de_clientes)
     lista_de_faturas = le_de_ficheiro(nome_ficheiro_lista_de_faturas)
     lista_de_items = le_de_ficheiro(nome_ficheiro_lista_de_items)
+    lista_de_cortesia = le_de_ficheiro(nome_ficheiro_lista_de_cortesia)
 
-    return  lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items
+    return  lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items, lista_de_cortesia
 
-def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items):
+def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items, lista_de_cortesia):
     """TODO: documentação
 
     :param lista_de_veiculos: lista de veiculos
@@ -30,6 +32,7 @@ def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de
         guarda_em_ficheiro(nome_ficheiro_lista_de_clientes, lista_de_clientes)
         guarda_em_ficheiro(nome_ficheiro_lista_de_faturas, lista_de_faturas)
         guarda_em_ficheiro(nome_ficheiro_lista_de_items, lista_de_items)
+        guarda_em_ficheiro(nome_ficheiro_lista_de_cortesia, lista_de_cortesia)
     else:
         print("Gravação cancelada...")
 
