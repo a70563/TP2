@@ -15,7 +15,7 @@ def menu():
     lista_de_clientes = []
     lista_de_items = []
     lista_de_faturas = []
-    imprime_lista_de_cortesia = []
+    lista_de_cortesia = []
 
     while True:
         print("""
@@ -41,10 +41,10 @@ def menu():
             exit()
 
         elif op == "g":
-            guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items)
+            guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items, lista_de_cortesia)
 
         elif op == "c":
-            lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items = carrega_as_listas_dos_ficheiros()
+            lista_de_veiculos, lista_de_clientes, lista_de_faturas, lista_de_items, lista_de_cortesia = carrega_as_listas_dos_ficheiros()
 
         elif op == "nc":
             novo_cliente = cria_novo_cliente()
