@@ -5,12 +5,12 @@ nome_ficheiro_lista_de_clientes = "lista_de_clientes.pk"
 
 def cria_novo_cliente():
 
-    nome = input("Nome?")
-    sobrenome = input("Sobrenome?")
-    telefone = input("Telefone?")
-    morada = input("Morada?")
-    nif = input("NIF?")
-    email = input("Email?")
+    nome = input("Nome? ")
+    sobrenome = input("Sobrenome? ")
+    telefone = input("Telefone? ")
+    morada = input("Morada? ")
+    nif = input("NIF? ")
+    email = input("Email? ")
 
     cliente = {"Nome": nome,
                "sobrenome": sobrenome,

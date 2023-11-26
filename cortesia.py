@@ -3,19 +3,19 @@ from io_terminal import imprime_lista
 nome_ficheiro_lista_de_cortesia = "lista_de_cortesia.pk"
 
 
-def cria_novo_viatura_cortesia():
+def cria_novo_veiculo_cortesia():
 
-    marca_cortesia = input("Marca de viatura de cortesia? ")
-    modelo_cortesia = input("Modelo da viatura de cortesia?")
-    matricula_cortesia = input("Matricula da viatura? ").upper()
-    estado_viatura = input("Estado da viatura? ").upper()
+    marca_cortesia = input("Marca? ")
+    modelo_cortesia = input("Modelo? ")
+    matricula_cortesia = input("Matricula? ").upper()
+    ## estado_veiculo = input("Estado do veículo? ").upper()  -- pretendemos adicionar mais informações com novas variaveis 
 
-    viatura_cortesia = {"Marca da Viatura": marca_cortesia,
-            "Modelo da Viatura": modelo_cortesia,
-            "Matricula da Viatura": matricula_cortesia,
-            "Estado da Viatura": estado_viatura}
+    veiculo_cortesia = {"Marca do Veículo": marca_cortesia,
+            "Modelo da Veículo": modelo_cortesia,
+            "Matricula da Veículo": matricula_cortesia}
+            ## "Estado da Veículo": estado_veiculo
 
-    return viatura_cortesia
+    return veiculo_cortesia
 
 
 def imprime_lista_de_cortesia(lista_de_cortesia):
